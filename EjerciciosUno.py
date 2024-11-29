@@ -13,4 +13,24 @@ def calcularFuncion(x, z, y, w):
     return ans
 
 EjercicioUno = calcularFuncion(8, 7, 3, 4)
-print("Ejercicio uno \n", EjercicioUno)
+print("Ejercicio uno \n", EjercicioUno, "\n")
+
+# Ejercicio 2
+
+def calcularCilindro(r, h):
+    volumenCilindro = ((math.pi)*((r)**(2))*(h))
+    return volumenCilindro
+
+def calcularCono(r, h):
+    volumenCono = ((1/3)*(math.pi)*((r)**(2))*(h)) 
+    return volumenCono
+
+def calcularEsfera(r):
+    volumenEsfera = ((4/3)*(math.pi)*((r)**(3)))
+    return volumenEsfera
+
+EjercicioDosCilindro = calcularCilindro(8, 7)
+EjercicioDosCono = calcularCono(3, 4)
+EjercicioDosEsfera = calcularEsfera(2)
+print("Ejercicio dos \n", "Volumen del cilindro: ", EjercicioDosCilindro)
+print(" Volumen del cono: ", EjercicioDosCono, "\n", "Volumen de la esfera: ", EjercicioDosEsfera)
