@@ -33,4 +33,33 @@ EjercicioDosCilindro = calcularCilindro(8, 7)
 EjercicioDosCono = calcularCono(3, 4)
 EjercicioDosEsfera = calcularEsfera(2)
 print("Ejercicio dos \n", "Volumen del cilindro: ", EjercicioDosCilindro)
-print(" Volumen del cono: ", EjercicioDosCono, "\n", "Volumen de la esfera: ", EjercicioDosEsfera)
+print(" Volumen del cono: ", EjercicioDosCono, "\n", "Volumen de la esfera: ", EjercicioDosEsfera, "\n")
+
+# Ejercicio 3
+
+def sumarMayorMenor(a, b, c, d, e):
+    if a > b and a > c and a > d and a > e:
+        numMayor = a
+    elif b > a and b > c and b > d and b > e:
+        numMayor = b
+    elif c > a and c > b and c > d and c > e:
+        numMayor = c
+    elif d > a and d > b and d > c and d > e:
+        numMayor = d
+    else:
+        numMayor = e
+    if a < b and a < c and a < d and a < e:
+        numMenor = a
+    elif b < a and b < c and b < d and b < e:
+        numMenor = b
+    elif c < a and c < b and c < d and c < e:
+        numMenor = c
+    elif d < a and d < b and d < c and d < e:
+        numMenor = d
+    else:
+        numMenor = e
+    ans = (numMayor + numMenor)
+    return ans
+
+EjercicioTres = sumarMayorMenor(8, 7, 3, 4, 2)
+print("Ejercicio tres \n", EjercicioTres, "\n")
