@@ -63,3 +63,19 @@ def sumarMayorMenor(a, b, c, d, e):
 
 EjercicioTres = sumarMayorMenor(8, 7, 3, 4, 2)
 print("Ejercicio tres \n", EjercicioTres, "\n")
+
+# Ejercicio 4
+
+def determinarCuadrante(x, y):
+    if x > 0 and y > 0:
+        ans = 1
+    elif x < 0 and y > 0:
+        ans = 2
+    elif x < 0 and y < 0:
+        ans = 3
+    else:
+        ans = 4
+    return ans
+
+EjercicioCuatro = determinarCuadrante(8, 7)
+print("Ejercicio cuatro \n", EjercicioCuatro, "\n")
