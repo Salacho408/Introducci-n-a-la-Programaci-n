@@ -79,3 +79,27 @@ def determinarCuadrante(x, y):
 
 EjercicioCuatro = determinarCuadrante(8, 7)
 print("Ejercicio cuatro \n", EjercicioCuatro, "\n")
+
+# Ejercicio 5
+
+def sumarEnCuadrante(punto, cuadrante):
+    if punto == cuadrante:
+        suma = 1
+    else:
+        suma = 0
+    return suma
+    
+def cuantosEnCuadrante(x1, y1, x2, y2, x3, y3, x4, y4, c):
+    ans = 0
+    primerPunto = determinarCuadrante(x1, y1)
+    ans += sumarEnCuadrante(primerPunto, c)
+    segundoPunto = determinarCuadrante(x2, y2)
+    ans += sumarEnCuadrante(segundoPunto, c)
+    tercerPunto = determinarCuadrante(x3, y3)
+    ans += sumarEnCuadrante(tercerPunto, c)
+    cuartoPunto = determinarCuadrante(x4, y4)
+    ans += sumarEnCuadrante(cuartoPunto, c)
+    return ans
+
+EjercicioCinco = cuantosEnCuadrante(8, 7, 3, 4, 2, 3, 8, 7, 3)
+print("Ejercicio cinco \n", EjercicioCinco, "\n")
