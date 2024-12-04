@@ -132,3 +132,44 @@ def tienePoquer(cartaUno, cartaDos, cartaTres, cartaCuatro, cartaCinco):
 
 EjercicioSeis = tienePoquer("A", "2", "2", "2", "Q")
 print("Ejercicio seis \n", EjercicioSeis, "\n")
+
+# Ejercicio 7
+
+def ganadorSet(pJ1, pJ2):
+    if ((pJ1 == 6) and (pJ2 <= (pJ1 - 2))) or ((pJ1 == 7) and ((pJ2 == 5) or (pJ2 == 6))):
+        j1 = 1
+        j2 = 0
+    elif ((pJ2 == 6) and (pJ1 <= (pJ2 - 2))) or ((pJ2 == 7) and ((pJ1 == 5) or (pJ1 == 6))):
+        j1 = 0
+        j2 = 1
+    else:
+        j1 = 0
+        j2 = 0
+    return j1, j2
+
+def ganaPartido(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, jugadorUno, jugadorDos):
+    resultadoJ1 = 0
+    resultadoJ2 = 0
+    contrincanteUno, contrincanteDos = ganadorSet(p1, p2)
+    resultadoJ1 += contrincanteUno
+    resultadoJ2 += contrincanteDos
+    contrincanteUno, contrincanteDos = ganadorSet(p3, p4)
+    resultadoJ1 += contrincanteUno
+    resultadoJ2 += contrincanteDos
+    contrincanteUno, contrincanteDos = ganadorSet(p5, p6)
+    resultadoJ1 += contrincanteUno
+    resultadoJ2 += contrincanteDos
+    contrincanteUno, contrincanteDos = ganadorSet(p7, p8)
+    resultadoJ1 += contrincanteUno
+    resultadoJ2 += contrincanteDos
+    contrincanteUno, contrincanteDos = ganadorSet(p9, p10)
+    resultadoJ1 += contrincanteUno
+    resultadoJ2 += contrincanteDos
+    if resultadoJ1 > resultadoJ2:
+        ans = jugadorUno
+    else:
+        ans = jugadorDos
+    return ans
+
+EjercicioSiete = ganaPartido(6, 4, 7, 5, 3, 3, 2, 6, 7, 6, "Santiago", "Carlos")
+print("Ejercicio siete \n", EjercicioSiete, "\n")
