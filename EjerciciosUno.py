@@ -173,3 +173,35 @@ def ganaPartido(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, jugadorUno, jugadorDos)
 
 EjercicioSiete = ganaPartido(6, 4, 7, 5, 3, 3, 2, 6, 7, 6, "Santiago", "Carlos")
 print("Ejercicio siete \n", EjercicioSiete, "\n")
+
+# Ejercicio 8
+
+def puedeAlmorzar(proteina, numCalorias, pesoAlmuerzo, pesoEnsalada):
+    if proteina == "Carne desmechada":
+        almuerzo = "Almuerzo permitido"
+    elif numCalorias < 500:
+        almuerzo = "Almuerzo permitido"
+    elif ((numCalorias >= 500) and (numCalorias < 700)) and ((pesoAlmuerzo < 325) and (pesoEnsalada >= 100)):
+        almuerzo = "Almuerzo permitido"
+    elif pesoEnsalada > (pesoAlmuerzo * 0.60):
+        almuerzo = "Almuerzo permitido"
+    else:
+        almuerzo = "Almuerzo no permitido"
+    return almuerzo
+
+EjercicioOcho = puedeAlmorzar("Carne desmechada", 600, 300, 150)
+print("Ejercicio ocho \n", EjercicioOcho, "\n")
+
+# Ejercicio 9
+
+def puedeAtacar(filaReina, columnaReina, filaPeon, columnaPeon):
+    if (filaReina == filaPeon) or (columnaReina == columnaPeon):
+        ans = "Puede atacar"
+    elif abs(filaReina - filaPeon) == abs(columnaReina - columnaPeon):
+        ans = "Puede atacar"
+    else:
+        ans = "No puede atacar"
+    return ans
+
+EjercicioNueve = puedeAtacar(8, 7, 3, 4)
+print("Ejercicio nueve \n", EjercicioNueve, "\n")
