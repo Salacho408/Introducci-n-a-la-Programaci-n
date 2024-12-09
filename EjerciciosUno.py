@@ -205,3 +205,48 @@ def puedeAtacar(filaReina, columnaReina, filaPeon, columnaPeon):
 
 EjercicioNueve = puedeAtacar(8, 7, 3, 4)
 print("Ejercicio nueve \n", EjercicioNueve, "\n")
+
+# Ejercicio 10
+
+def puedeSalir(tipoVehiculo, placa, dia, hora, minuto):
+    salir = False
+    if (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Lunes") and (placa == 7 or placa == 8):
+        flag = 1
+    elif (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Martes") and (placa == 9 or placa == 0):
+        flag = 1
+    elif (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Miércoles") and (placa == 1 or placa == 2):
+        flag = 1
+    elif (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Jueves") and (placa == 3 or placa == 4):
+        flag = 1
+    elif (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Viernes") and (placa == 5 or placa == 6):
+        flag = 1
+    elif (tipoVehiculo == "Particular") and ((hora >= 6 and hora <= 10) or (hora >= 16 and hora <= 20)) and (dia == "Sábado" or dia == "Domingo"):
+        flag = 1
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Lunes") and (placa == 5 or placa == 6):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Martes") and (placa == 7 or placa == 8):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Miércoles") and (placa == 0 or placa == 9):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Jueves") and (placa == 1 or placa == 2):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Viernes") and (placa == 3 or placa == 4):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Sábado") and (placa == 1 or placa == 2 or placa == 3 or placa == 4 or placa == 5):
+        flag = 0
+    elif (tipoVehiculo == "Servicio Público") and (hora >= 5 and hora <= 22) and (dia == "Domingo") and (placa == 6 or placa == 7 or placa == 8 or placa == 9 or placa == 0):
+        flag = 0
+    else:
+        salir = True       
+    if salir == True:
+        ans = salir
+    elif (salir == False) and (flag == 1) and ((hora == 10 and minuto != 0) or (hora == 20 and minuto != 0)):
+        ans = True
+    elif (salir == False) and (flag == 0) and (hora == 22 and minuto != 0):
+        ans = True
+    else:
+        ans = salir
+    return ans
+
+EjercicioDiez = puedeSalir("Servicio Público", 1, "Miércoles", 17, 35)
+print("Ejercicio diez \n", EjercicioDiez)     
