@@ -19,3 +19,55 @@ imprimirNumerosFor()
 print(" Usando ciclos while: ")
 imprimirNumerosWhile()
 print("\n")
+
+# Ejercicio 2
+
+def leerNumeros():
+    salida = True
+    cantidadDatos, cantidadImpares, sumaMultiplosCinco, cantidadMayoresDiezMenoresVeinte = 0, 0, 0, 0
+    tuplaNumeros = ()
+    while salida == True:
+        dato = input(" Numero: ")
+        if dato != "Fin":
+            datoEntero = int(dato)
+            cantidadDatos += 1
+            if (datoEntero % 2 != 0):
+                cantidadImpares += 1
+            if (datoEntero % 5 == 0):
+                sumaMultiplosCinco += datoEntero
+            if (datoEntero > 10 and datoEntero < 20):
+                cantidadMayoresDiezMenoresVeinte += 1
+        else:
+            salida = False
+    tuplaNumeros = tuplaNumeros + (cantidadDatos, cantidadImpares, sumaMultiplosCinco, cantidadMayoresDiezMenoresVeinte)
+    print("", tuplaNumeros)
+    
+print("Ejercicio dos")
+leerNumeros()
+print("\n")
+
+# Ejercicio 3
+
+def imprimirPotencias(n, m):
+    potencia = 0
+    if (n != 0) and (n != 1):
+        while (n**potencia) <= m:
+            print("", n**potencia)
+            potencia += 1
+    else:
+        if n == 1:
+            if m != 0:
+                print("", 1)
+        else:
+            print("", 0)
+
+def leerImprimir():
+    numeroEjecuciones = int(input(" Numero de ejecuciones del programa: "))
+    for _ in range(numeroEjecuciones):
+        numeroUno = int(input(" Primer numero: "))
+        numeroDos = int(input(" Segundo numero: "))
+        imprimirPotencias(numeroUno, numeroDos)
+
+print("Ejercicio tres")
+leerImprimir()
+print("\n")
