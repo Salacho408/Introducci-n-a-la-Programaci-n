@@ -71,3 +71,25 @@ def leerImprimir():
 print("Ejercicio tres")
 leerImprimir()
 print("\n")
+
+# Ejercicio 4
+
+def calcularSueldo(sal, e, n):
+    sumatoria = 0
+    for i in range(1, (n+1)):
+        sumatoria += i
+    total = sal + (e * 10000) + (sumatoria * 5000)
+    return total
+
+def leerImprimir():
+    numeroEjecuciones = int(input(" Numero de ejecuciones del programa: "))
+    for _ in range(numeroEjecuciones):
+        datoUno = int(input(" Salario base: "))
+        datoDos = int(input(" Edad del empleado: "))
+        datoTres = int(input(" Años en la compañia: "))
+        ans = calcularSueldo(datoUno, datoDos, datoTres)
+        print("", ans)
+
+print("Ejercicio cuatro")
+leerImprimir()
+print("\n")
