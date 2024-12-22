@@ -93,3 +93,23 @@ def leerImprimir():
 print("Ejercicio cuatro")
 leerImprimir()
 print("\n")
+
+# Ejercicio 5
+
+def Hajj_e_Akbar():
+    salida = True
+    tuplaDatos = ()
+    while salida == True:
+        dato = input(" Peregrinacion: ")
+        if dato != "*":
+            tuplaDatos = tuplaDatos + (dato,)
+        else:
+            salida = False
+    for i in range(len(tuplaDatos)):
+        if tuplaDatos[i] == "Hajj":
+            print(" Case", (i+1), ": Hajj-e-Akbar")
+        else:
+            print(" Case", (i+1), ": Hajj-e-Asghar")    
+
+print("Ejercicio cinco")
+Hajj_e_Akbar()
