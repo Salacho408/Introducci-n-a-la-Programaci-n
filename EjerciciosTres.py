@@ -43,3 +43,41 @@ def imprimirAsteriscos(n):
 print("Ejercicio dos")
 imprimirAsteriscos(3)
 print("\n")
+
+# Ejercicio 3
+
+def simpsonRule(a, b, n):
+    k, suma = 0, 0
+    if n % 2 != 0:
+        ans = "El valor de n debe ser un entero par"
+    elif n == 0:
+        ans = "El valor de n debe ser diferente de 0"
+    else:
+        h = ((b-a)/n)
+        for k in range(n+1):
+            Yk = ((a+k*h)**(3))
+            if k != 0 and k != n:
+                if k % 2 != 0:
+                    suma += ((4)*(Yk))
+                else:
+                    suma += ((2)*(Yk))
+            else:
+                suma += Yk
+        ans = ((h/3)*(suma))
+    return ans
+
+EjercicioTres = simpsonRule(1, 5, 8)
+print("Ejercicio tres \n", EjercicioTres, "\n")
+
+# Ejercicio 4
+
+def aproximarEuler(n):
+    suma, producto = 1, 1
+    for i in range(1, n+1):
+        producto *= i
+        suma += 1/producto
+    ans = suma
+    return ans
+
+EjercicioCuatro = aproximarEuler(8)
+print("Ejercicio cuatro \n", EjercicioCuatro, "\n")
