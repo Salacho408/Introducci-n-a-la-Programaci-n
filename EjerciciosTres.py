@@ -1,4 +1,5 @@
 # Santiago Salazar Gil
+import math
 
 # Ejercicio 1
 
@@ -113,3 +114,43 @@ def filtrarValoresEnPosicion(l):
 
 EjercicioSeis = filtrarValoresEnPosicion([10, 8, 4, 6, 15, 12, 2, 19])
 print("Ejercicio seis \n", EjercicioSeis, "\n")
+
+# Ejercicio 7
+
+def reemplazar(l, v1, v2):
+    for i in range(len(l)):
+        if l[i] == v1:
+            l[i] = v2
+    ans = l
+    return ans
+
+EjercicioSiete = reemplazar([4, 1, 11, 1, 8, 1, 1, 5, 6, 7, 17, 1], 1, 100)
+print("Ejercicio siete \n", EjercicioSiete, "\n")
+
+# Ejercicio 8
+
+def perimetroFigura(listaUno, listaDos):
+    ans = 0
+    tamanio = len(listaUno)
+    if len(listaUno) != len(listaDos):
+        ans = "Las listas deben tener el mismo tamaño"
+    else:
+        if tamanio < 3:
+            ans = "No existen poligonos con menos de tres lados"
+        else:
+            for i in range(tamanio):
+                if i != (tamanio-1):
+                    x1 = listaUno[i]
+                    y1 = listaDos[i]
+                    x2 = listaUno[i+1]
+                    y2 = listaDos[i+1]
+                else:
+                    x1 = listaUno[i]
+                    y1 = listaDos[i]
+                    x2 = listaUno[0]
+                    y2 = listaDos[0]
+                ans += math.sqrt(((x2-x1)**(2)) + ((y2-y1)**(2)))
+    return ans
+
+EjercicioOcho = perimetroFigura([8, 7, 3], [4, 2, 3])
+print("Ejercicio ocho \n", EjercicioOcho, "u \n")
