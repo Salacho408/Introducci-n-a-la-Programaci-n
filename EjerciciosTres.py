@@ -73,11 +73,43 @@ print("Ejercicio tres \n", EjercicioTres, "\n")
 
 def aproximarEuler(n):
     suma, producto = 1, 1
-    for i in range(1, n+1):
+    for i in range(1, (n+1)):
         producto *= i
-        suma += 1/producto
+        suma += (1/producto)
     ans = suma
     return ans
 
 EjercicioCuatro = aproximarEuler(8)
 print("Ejercicio cuatro \n", EjercicioCuatro, "\n")
+
+# Ejercicio 5
+
+def imprimirLineasNumeros(n):
+    numero, nAux = n, n
+    for _ in range(n):
+        print(" ", end = "")
+        for i in range(nAux):  
+            if i != (nAux-1):
+                print(numero, "", end = "")
+            else:
+                print(numero)
+                ultimoNumero = (numero - 1)
+                numero = ((nAux * 2) + ultimoNumero)
+            numero -= 1
+        nAux -= 1
+        
+print("Ejercicio cinco")
+imprimirLineasNumeros(3)
+print("\n")
+
+# Ejercicio 6
+
+def filtrarValoresEnPosicion(l):
+    ans = []
+    for i in range(len(l)):
+        if i == l[i]:
+            ans.append(i)
+    return ans
+
+EjercicioSeis = filtrarValoresEnPosicion([10, 8, 4, 6, 15, 12, 2, 19])
+print("Ejercicio seis \n", EjercicioSeis, "\n")
