@@ -139,18 +139,40 @@ def perimetroFigura(listaUno, listaDos):
             ans = "No existen poligonos con menos de tres lados"
         else:
             for i in range(tamanio):
+                x1 = listaUno[i]
+                y1 = listaDos[i]
                 if i != (tamanio-1):
-                    x1 = listaUno[i]
-                    y1 = listaDos[i]
                     x2 = listaUno[i+1]
                     y2 = listaDos[i+1]
                 else:
-                    x1 = listaUno[i]
-                    y1 = listaDos[i]
                     x2 = listaUno[0]
                     y2 = listaDos[0]
                 ans += math.sqrt(((x2-x1)**(2)) + ((y2-y1)**(2)))
     return ans
 
 EjercicioOcho = perimetroFigura([8, 7, 3], [4, 2, 3])
-print("Ejercicio ocho \n", EjercicioOcho, "u \n")
+print("Ejercicio ocho \n", EjercicioOcho, "\n")
+
+# Ejercicio 9 (sacarFactorial incluye al 0, a pesar de que factAcumInv no tiene en cuenta el factorial de 0)
+
+def sacarFactorial(n):
+    factorial = n
+    i = (n-1)
+    if n != 0:
+        while i > 1:
+            factorial *= i
+            i -= 1
+    else:
+        factorial = 1
+    return factorial
+
+def factAcumInv(N):
+    ans = []
+    while N >= 1:
+        numero = sacarFactorial(N)
+        ans.append(numero)
+        N -= 1
+    return ans
+
+EjercicioNueve = factAcumInv(7)
+print("Ejercicio nueve \n", EjercicioNueve, "\n")    
