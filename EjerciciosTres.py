@@ -176,3 +176,43 @@ def factAcumInv(N):
 
 EjercicioNueve = factAcumInv(7)
 print("Ejercicio nueve \n", EjercicioNueve, "\n")    
+
+# Ejercicio 10 (Asumiendo que las razones menores que 0 y mayores que 99 no alteran el valor de sumatoriaNumeros)
+
+def Emoogle_Balance():
+    salida = True
+    listaDiferencias = []
+    i = 0
+    while salida == True:
+        numeros = []
+        sumatoriaNumeros, sumatoriaCeros = 0, 0
+        if i != 75:
+            numeroEnteros = int(input(" Numero de enteros: "))
+        if numeroEnteros < 0 or numeroEnteros > 1000:
+            listaDiferencias.append("El numero de enteros debe ser un valor situado entre 1 y 1000")
+        else:
+            if numeroEnteros != 0 and i != 75:
+                print(" Enteros: ", end = "")                
+                numeros = input().split()
+                for j in range(len(numeros)):
+                    numeros[j] = int(numeros[j])                 
+                for j in range(len(numeros)):
+                    if numeros[j] == 0:
+                        sumatoriaCeros += 1
+                    else:
+                        if numeros[j] >= 1 and numeros[j] <= 99:
+                            sumatoriaNumeros += 1
+                if len(numeros) != numeroEnteros:
+                    listaDiferencias.append("Cantidad erronea de enteros ingresados")
+                else:
+                    diferencia = sumatoriaNumeros - sumatoriaCeros
+                    listaDiferencias.append(diferencia)
+                i += 1
+            else:
+                salida = False    
+    for i in range(len(listaDiferencias)):
+        print(" Case", (i+1), ":", listaDiferencias[i])
+
+print("Ejercicio diez")
+Emoogle_Balance()
+print("\n")     
