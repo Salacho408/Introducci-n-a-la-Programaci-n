@@ -215,4 +215,52 @@ def Emoogle_Balance():
 
 print("Ejercicio diez")
 Emoogle_Balance()
-print("\n")     
+print("\n")
+
+# Ejercicio 11
+
+def enOrdenOEnDesorden(lista):
+    esMenor, esMayor = False, False
+    for i in range(len(lista)):
+        if i == 0:
+            valorMayorOMenor = lista[0]
+        else:            
+            if lista[i] < valorMayorOMenor:                
+                esMenor = True
+            elif lista[i] > valorMayorOMenor:                  
+                esMayor = True
+            valorMayorOMenor = lista[i]
+    if esMenor == esMayor:
+        ans = "Unordered"
+    else:
+        ans = "Ordered" 
+    return ans
+
+def Lumberjack_Sequencing():
+    flag = False
+    listaOrdenada = []
+    numeroGrupos = int(input(" Numero de grupos de leñadores: "))
+    if numeroGrupos <= 0 or numeroGrupos >= 20:
+        listaOrdenada.append("La cantidad de grupos debe ser mayor a 0 y menor que 20")
+    else:
+        for _ in range(numeroGrupos):
+            print(" Longitudes de barba de los leñadores: ", end = "")
+            leñadores = input().split()
+            for i in range(len(leñadores)):
+                leñadores[i] = int(leñadores[i])
+                if leñadores[i] <= 0 or leñadores[i] >= 100:
+                    flag = True
+            if len(leñadores) != 10:
+                listaOrdenada.append("Cada grupo debe estar conformado si o si por 10 leñadores")
+            else:
+                if flag == True:
+                    listaOrdenada.append("Esta lista debe contener valores entre 1 y 99")
+                else:
+                    orden = enOrdenOEnDesorden(leñadores)
+                    listaOrdenada.append(orden)
+    print(" Lumberjacks:")
+    for i in range(len(listaOrdenada)):
+        print("", listaOrdenada[i])
+    
+print("Ejercicio once")
+Lumberjack_Sequencing()                            
